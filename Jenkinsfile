@@ -23,7 +23,9 @@ pipeline {
          stage('Deploy Project To Tomcat Server') {
                         steps {
                           withCredentials([string(credentialsId: 'dev-server', variable: 'dev_server')]) {
-                              bat "pscp -pw ${dev_server} -hostkey 95:71:b5:f9:33:5d:04:4d:ce:87:48:02:0d:ce:fa:11 \"C:\\Program Files (x86)\\Jenkins\\workspace\\angular-automation-local\\dist\\angularapp\\*\" root@192.168.1.170:/usr/local/tomcat9/webapps/angular-test-app"
+                          withCredentials([string(credentialsId: 'ssh_server', variable: 'ssh_server')]) {
+                              bat "pscp -pw ${dev_server} -hostkey ${ssh_server} \"C:\\Program Files (x86)\\Jenkins\\workspace\\angular-automation-local\\dist\\angularapp\\*\" root@192.168.1.170:/usr/local/tomcat9/webapps/angular-test-app"
+                        }
                         }
                         }
 
