@@ -5,7 +5,7 @@ pipeline {
 
             steps {
              nodejs('node') {
-                 bat 'npm install'
+                 bat 'npm install --no-bin-links'
              }
 
             }
