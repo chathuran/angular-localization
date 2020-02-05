@@ -10,7 +10,7 @@ pipeline {
         stage('Build Project') {
 
             steps {
-                bat "npm run build"
+                bat "npm build"
             }
         }
       /**  stage('Deploy Project To Tomcat') {
