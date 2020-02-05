@@ -24,7 +24,7 @@ pipeline {
                         steps {
                           withCredentials([string(credentialsId: 'dev-server', variable: 'dev_server')]) {
                           withCredentials([string(credentialsId: 'ssh_server', variable: 'ssh_server')]) {
-                              bat "pscp -pw ${dev_server} -hostkey ${ssh_server} \"C:\\Program Files (x86)\\Jenkins\\workspace\\angular-automation-local\\dist\\angularapp\\*\" root@192.168.1.170:/usr/local/tomcat9/webapps/angular-test-app"
+                              bat "pscp -r -pw ${dev_server} -hostkey ${ssh_server} \"C:\\Program Files (x86)\\Jenkins\\workspace\\angular-automation-local\\dist\\angularapp\\*\" root@192.168.1.170:/usr/local/tomcat9/webapps/angular-test-app"
                         }
                         }
                         }
