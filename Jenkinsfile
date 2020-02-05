@@ -4,13 +4,19 @@ pipeline {
         stage('Install node Packages') {
 
             steps {
-                bat 'npm install'
+             nodejs('node') {
+                 bat 'npm install'
+             }
+
             }
         }
         stage('Build Project') {
 
             steps {
-                bat 'npm run-script build'
+                nodejs('node') {
+                     bat 'npm run-script build'
+
+                }
             }
         }
       /**  stage('Deploy Project To Tomcat') {
