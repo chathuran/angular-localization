@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script>
     var xhrObj = new XMLHttpRequest();
-    var url = '/angular-test-app/assets/config/config.js';
+    var url = '/assets/config/config.js';
     xhrObj.open('GET', url, false);
     xhrObj.send('');
     var se = document.createElement('script');
@@ -13,7 +13,8 @@
     document.getElementsByTagName('head')[0].appendChild(se);
   </script>
   <title>Angularapp</title>
-  <base href="http://192.168.1.170:8080/angular-test-app/">
+<!--  <base href="http://192.168.1.170:8080/angular-test-app/">-->
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
